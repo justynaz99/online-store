@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use core\App;
+use core\SessionUtils;
 use core\Utils;
 use core\RoleUtils;
 use core\ParamUtils;
@@ -47,7 +48,10 @@ class LoginCtrl {
 
             if($result) {
                 RoleUtils::addRole('user');
-                App::getRouter()->redirectTo("home");
+                SessionUtils::store("id_user",$result[0]['id_user']);
+                error_log("Zapisane: ".SessionUtils::load("id_user", true));
+                Utils::addInfoMessage("Zalogowano użytkownika: ".$this->form->username);
+                App::getRouter()->redirectTo('Home.tpl');
             } else {
                 Utils::addErrorMessage('Incorrect username or password');
                 $this->generateView();
@@ -59,6 +63,11 @@ class LoginCtrl {
 
     public function action_loginShow() {
         $this->generateView();
+    }
+
+    public function action_logout(){
+        session_destroy();
+        App::getRouter()->redirectTo('Home.tpl');
     }
 
 

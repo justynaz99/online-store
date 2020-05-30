@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-05-13 09:54:01
+/* Smarty version 3.1.34-dev-7, created on 2020-05-30 16:47:17
   from 'C:\xampp\htdocs\onlineStore\app\views\Home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ebba799c17c91_16489543',
+  'unifunc' => 'content_5ed271f53f5677_30824742',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4bd95617f36d668d7dee946a44e295062adf3876' => 
     array (
       0 => 'C:\\xampp\\htdocs\\onlineStore\\app\\views\\Home.tpl',
-      1 => 1589356439,
+      1 => 1590849606,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ebba799c17c91_16489543 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ed271f53f5677_30824742 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
@@ -28,16 +28,16 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_8535410225ebba799c06de1_55313364', "content");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_8294000885ed271f53b21c6_05141659', "content");
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block "content"} */
-class Block_8535410225ebba799c06de1_55313364 extends Smarty_Internal_Block
+class Block_8294000885ed271f53b21c6_05141659 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_8535410225ebba799c06de1_55313364',
+    0 => 'Block_8294000885ed271f53b21c6_05141659',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -66,56 +66,29 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
             <h2>Ipsum sed dolor</h2>
         </header>
         <div class="posts">
-            <article>
-                <a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
-                <h3>Interdum aenean</h3>
-                <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-                <ul class="actions">
-                    <li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
-addItem" class="button">Add to shopping cart</a></li>
-                </ul>
-            </article>
-            <article>
-                <a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
-                <h3>Nulla amet dolore</h3>
-                <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-                <ul class="actions">
-                    <li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
-addItem" class="button">Add to shopping cart</a></li>
-                </ul>
-            </article>
-            <article>
-                <a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
-                <h3>Tempus ullamcorper</h3>
-                <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-                <ul class="actions">
-                    <li><a href="#" class="button">Add to shopping cart</a></li>
-                </ul>
-            </article>
-            <article>
-                <a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-                <h3>Sed etiam facilis</h3>
-                <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-                <ul class="actions">
-                    <li><a href="#" class="button">Add to shopping cart</a></li>
-                </ul>
-            </article>
-            <article>
-                <a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-                <h3>Feugiat lorem aenean</h3>
-                <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-                <ul class="actions">
-                    <li><a href="#" class="button">Add to shopping cart</a></li>
-                </ul>
-            </article>
-            <article>
-                <a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
-                <h3>Amet varius aliquam</h3>
-                <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-                <ul class="actions">
-                    <li><a href="#" class="button">Add to shopping cart</a></li>
-                </ul>
-            </article>
+            <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['products']->value, 'p');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['p']->value) {
+?>
+                <article>
+                    <a href="#" class="image"><img src="images/pic<?php echo $_smarty_tpl->tpl_vars['p']->value["id_product"];?>
+.jpg" alt="" /></a>
+                    <h3><?php echo $_smarty_tpl->tpl_vars['p']->value["name"];?>
+</h3>
+                    <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+                    <p><?php echo $_smarty_tpl->tpl_vars['p']->value["price"];?>
+</p>
+                    <ul class="actions">
+                        <li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+addItem/<?php echo $_smarty_tpl->tpl_vars['p']->value["id_product"];?>
+" class="button">Add to shopping cart</a></li>
+                    </ul>
+                </article>
+            <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </div>
     </section>
 <?php

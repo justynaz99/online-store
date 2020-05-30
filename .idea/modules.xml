@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../html5up-editorial/.idea/html5up-editorial.iml" filepath="$PROJECT_DIR$/../html5up-editorial/.idea/html5up-editorial.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/onlineStore.iml" filepath="$PROJECT_DIR$/.idea/onlineStore.iml" />
       <module fileurl="file://$PROJECT_DIR$/../php_09_ajax/.idea/php_09_ajax.iml" filepath="$PROJECT_DIR$/../php_09_ajax/.idea/php_09_ajax.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../creditCalc/.idea/php_calc_cr.iml" filepath="$PROJECT_DIR$/../creditCalc/.idea/php_calc_cr.iml" />
     </modules>
   </component>
 </project>

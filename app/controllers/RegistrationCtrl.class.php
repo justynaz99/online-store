@@ -78,9 +78,11 @@ class RegistrationCtrl {
     }
 
     public function action_registration() {
+        error_log($this->form->username);
         if($this->validate()) {
+            error_log("tak");
             try {
-                if($this->form->id == '') {
+                //if($this->form->id == '') {
                     App::getDB()->insert("user", [
                         "username" => $this->form->username,
                         "password" => $this->form->password,
@@ -88,13 +90,15 @@ class RegistrationCtrl {
                         "last_name" => $this->form->last_name,
                         "email" => $this->form->email,
                     ]);
-                }
+                //}
             } catch (\PDOException $e) {
+                error_log($e->getMessage());
                 Utils::addErrorMessage('Insert error');
                 if (App::getConf()->debug)
                     Utils::addErrorMessage($e->getMessage());
             }
         } else {
+            error_log("nie");
             $this->generateView();
         }
     }

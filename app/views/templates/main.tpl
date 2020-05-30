@@ -59,6 +59,7 @@
                             <li><a href="{$conf->action_root}loginShow">Sign in</a></li>
                             <li><a href="{$conf->action_root}registrationShow">Sign up</a></li>
                             <li><a href="{$conf->action_root}shoppingCartShow">Shopping cart</a></li>
+                            <li><a href="{$conf->action_root}logout">Log out</a></li>
                         </ul>
                     </nav>
 
