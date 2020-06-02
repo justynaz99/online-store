@@ -9,21 +9,26 @@
     <title>Store</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="{$conf->app_url}/css/main.css"/>
 </head>
 
 
 <body class="is-preload">
+<div style="margin-top: 30px; margin-left: 1110px;">
+    <strong>Username:</strong> {$username}
+</div>
 
 <!-- Wrapper -->
 <div id="wrapper">
 
     <!-- Main -->
     <div id="main">
+
         <div class="inner">
 
+
             <!-- Header -->
-            <header id="header">
+            <header id="header" style="padding-top: 20px">
                 <a href="index.html" class="logo"><strong>Store</strong> online</a>
                 <ul class="icons">
                     <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
@@ -87,29 +92,27 @@
                 </div>
 
                     <!-- Scripts -->
-                    <script src="../assets/js/jquery.min.js"></script>
-                    <script src="../assets/js/browser.min.js"></script>
-                    <script src="../assets/js/breakpoints.min.js"></script>
-                    <script src="../assets/js/util.js"></script>
-                    <script src="../assets/js/main.js"></script>
+                    <script src="{$conf->app_url}/js/jquery.min.js"></script>
+                    <script src="{$conf->app_url}/js/browser.min.js"></script>
+                    <script src="{$conf->app_url}/js/breakpoints.min.js"></script>
+                    <script src="{$conf->app_url}/js/util.js"></script>
+                    <script src="{$conf->app_url}/js/main.js"></script>
             </div>
-
-
-
 
             {block name=messages}
 
                 {if $msgs->isMessage()}
-                    <div>
+                    <div class="messages bottom-margin">
                         <ul>
                             {foreach $msgs->getMessages() as $msg}
                                 {strip}
-                                    <li style="list-style-type: none">{$msg->text}</li>
+                                    <li class="msg {if $msg->isError()}error{/if} {if $msg->isWarning()}warning{/if} {if $msg->isInfo()}info{/if}">{$msg->text}</li>
                                 {/strip}
                             {/foreach}
                         </ul>
                     </div>
                 {/if}
+
             {/block}
 
         </div>

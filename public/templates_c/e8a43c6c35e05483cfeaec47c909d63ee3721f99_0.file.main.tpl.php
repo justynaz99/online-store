@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-05-20 09:11:43
+/* Smarty version 3.1.34-dev-7, created on 2020-06-02 17:03:24
   from 'C:\xampp\htdocs\onlineStore\app\views\templates\main.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ec4d82f4e9a66_25972784',
+  'unifunc' => 'content_5ed66a3cc6acf3_21169195',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e8a43c6c35e05483cfeaec47c909d63ee3721f99' => 
     array (
       0 => 'C:\\xampp\\htdocs\\onlineStore\\app\\views\\templates\\main.tpl',
-      1 => 1589958701,
+      1 => 1591110203,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ec4d82f4e9a66_25972784 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ed66a3cc6acf3_21169195 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -35,21 +35,28 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
     <title>Store</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
+/css/main.css"/>
 </head>
 
 
 <body class="is-preload">
+<div style="margin-top: 30px; margin-left: 1110px;">
+    <strong>Username:</strong> <?php echo $_smarty_tpl->tpl_vars['username']->value;?>
+
+</div>
 
 <!-- Wrapper -->
 <div id="wrapper">
 
     <!-- Main -->
     <div id="main">
+
         <div class="inner">
 
+
             <!-- Header -->
-            <header id="header">
+            <header id="header" style="padding-top: 20px">
                 <a href="index.html" class="logo"><strong>Store</strong> online</a>
                 <ul class="icons">
                     <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
@@ -61,7 +68,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
             </header>
 
             <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7445969955ec4d82f49ca45_40787782', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_12417276455ed66a3cc5c195_44146167', 'content');
 ?>
 
 
@@ -120,27 +127,29 @@ logout">Log out</a></li>
 
                     <!-- Scripts -->
                     <?php echo '<script'; ?>
- src="../assets/js/jquery.min.js"><?php echo '</script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
+/js/jquery.min.js"><?php echo '</script'; ?>
 >
                     <?php echo '<script'; ?>
- src="../assets/js/browser.min.js"><?php echo '</script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
+/js/browser.min.js"><?php echo '</script'; ?>
 >
                     <?php echo '<script'; ?>
- src="../assets/js/breakpoints.min.js"><?php echo '</script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
+/js/breakpoints.min.js"><?php echo '</script'; ?>
 >
                     <?php echo '<script'; ?>
- src="../assets/js/util.js"><?php echo '</script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
+/js/util.js"><?php echo '</script'; ?>
 >
                     <?php echo '<script'; ?>
- src="../assets/js/main.js"><?php echo '</script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
+/js/main.js"><?php echo '</script'; ?>
 >
             </div>
 
-
-
-
             <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_13617605295ec4d82f4bf213_23709392', 'messages');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6127790125ed66a3cc5f4b5_62459262', 'messages');
 ?>
 
 
@@ -152,12 +161,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_13617605295ec4d82f
 </body>
 </html><?php }
 /* {block 'content'} */
-class Block_7445969955ec4d82f49ca45_40787782 extends Smarty_Internal_Block
+class Block_12417276455ed66a3cc5c195_44146167 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_7445969955ec4d82f49ca45_40787782',
+    0 => 'Block_12417276455ed66a3cc5c195_44146167',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -169,12 +178,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'content'} */
 /* {block 'messages'} */
-class Block_13617605295ec4d82f4bf213_23709392 extends Smarty_Internal_Block
+class Block_6127790125ed66a3cc5f4b5_62459262 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'messages' => 
   array (
-    0 => 'Block_13617605295ec4d82f4bf213_23709392',
+    0 => 'Block_6127790125ed66a3cc5f4b5_62459262',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -182,14 +191,14 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
 
                 <?php if ($_smarty_tpl->tpl_vars['msgs']->value->isMessage()) {?>
-                    <div>
+                    <div class="messages bottom-margin">
                         <ul>
                             <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['msgs']->value->getMessages(), 'msg');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['msg']->value) {
 ?>
-                                <li style="list-style-type: none"><?php echo $_smarty_tpl->tpl_vars['msg']->value->text;?>
+                                <li class="msg <?php if ($_smarty_tpl->tpl_vars['msg']->value->isError()) {?>error<?php }?> <?php if ($_smarty_tpl->tpl_vars['msg']->value->isWarning()) {?>warning<?php }?> <?php if ($_smarty_tpl->tpl_vars['msg']->value->isInfo()) {?>info<?php }?>"><?php echo $_smarty_tpl->tpl_vars['msg']->value->text;?>
 </li>
                             <?php
 }
@@ -198,6 +207,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         </ul>
                     </div>
                 <?php }?>
+
             <?php
 }
 }

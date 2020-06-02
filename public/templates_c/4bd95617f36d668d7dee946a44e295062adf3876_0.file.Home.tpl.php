@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-05-30 16:47:17
+/* Smarty version 3.1.34-dev-7, created on 2020-06-02 08:27:37
   from 'C:\xampp\htdocs\onlineStore\app\views\Home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ed271f53f5677_30824742',
+  'unifunc' => 'content_5ed5f159054391_16317206',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4bd95617f36d668d7dee946a44e295062adf3876' => 
     array (
       0 => 'C:\\xampp\\htdocs\\onlineStore\\app\\views\\Home.tpl',
-      1 => 1590849606,
+      1 => 1591079255,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ed271f53f5677_30824742 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ed5f159054391_16317206 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
@@ -28,24 +28,26 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_8294000885ed271f53b21c6_05141659', "content");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_20607283835ed5f1590339f9_80974637', "content");
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block "content"} */
-class Block_8294000885ed271f53b21c6_05141659 extends Smarty_Internal_Block
+class Block_20607283835ed5f1590339f9_80974637 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_8294000885ed271f53b21c6_05141659',
+    0 => 'Block_20607283835ed5f1590339f9_80974637',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 
+
     <section id="banner">
         <div class="content">
+
             <header>
                 <h1>Online<br />
                     store</h1>

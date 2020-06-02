@@ -7,6 +7,7 @@ use core\ParamUtils;
 use Medoo\Medoo;
 use core\Validator;
 use core\Utils;
+use core\SessionUtils;
 
 class RegistrationCtrl {
 
@@ -78,33 +79,33 @@ class RegistrationCtrl {
     }
 
     public function action_registration() {
-        error_log($this->form->username);
+//        error_log($this->form->username);
         if($this->validate()) {
-            error_log("tak");
+//            error_log("tak");
             try {
-                //if($this->form->id == '') {
-                    App::getDB()->insert("user", [
-                        "username" => $this->form->username,
-                        "password" => $this->form->password,
-                        "first_name" => $this->form->first_name,
-                        "last_name" => $this->form->last_name,
-                        "email" => $this->form->email,
-                    ]);
-                //}
+                App::getDB()->insert("user", [
+                    "username" => $this->form->username,
+                    "password" => $this->form->password,
+                    "first_name" => $this->form->first_name,
+                    "last_name" => $this->form->last_name,
+                    "email" => $this->form->email,
+                ]);
+                App::getRouter()->redirectTo('Login.tpl');
             } catch (\PDOException $e) {
-                error_log($e->getMessage());
+//                error_log($e->getMessage());
                 Utils::addErrorMessage('Insert error');
                 if (App::getConf()->debug)
                     Utils::addErrorMessage($e->getMessage());
             }
         } else {
-            error_log("nie");
+//            error_log("nie");
             $this->generateView();
         }
     }
 
     public function generateView() {
         App::getSmarty()->assign('form', $this->form);
+        App::getSmarty()->assign('username', SessionUtils::load('username', true));
         App::getSmarty()->display('Registration.tpl');
     }
 

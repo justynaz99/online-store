@@ -2,7 +2,7 @@
 
 {block name=content}
 
-<form action="{$conf->action_root}login" style="width: 600px; margin-top: 5%">
+<form action="{$conf->action_root}login" style="width: 600px; margin-top: 5%" method="post">
     <h3>Sign in</h3>
     <div class="row gtr-uniform">
         <div class="col-6 col-12-xsmall">

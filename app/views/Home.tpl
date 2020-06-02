@@ -3,8 +3,10 @@
 
 {block name="content"}
 
+
     <section id="banner">
         <div class="content">
+
             <header>
                 <h1>Online<br />
                     store</h1>
