@@ -4,12 +4,12 @@
 {block name="content"}
 
 
-    <section id="banner">
+    <section id="banner" style="margin-top: -1em">
         <div class="content">
 
             <header>
-                <h1>Online<br />
-                    store</h1>
+                <h1>Sklep<br />
+                    internetowy</h1>
                 <p>Aenean ornare velit lacus</p>
             </header>
             <p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.</p>
@@ -26,7 +26,7 @@
         <header class="major">
             <h2>Ipsum sed dolor</h2>
         </header>
-        <div class="posts">
+        <div class="posts" style="margin-top: -1em">
             {foreach $products as $p}
                 <article>
                     <a href="#" class="image"><img src="images/pic{$p["id_product"]}.jpg" alt="" /></a>
@@ -34,7 +34,7 @@
                     <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
                     <p>{$p["price"]}</p>
                     <ul class="actions">
-                        <li><a href="{$conf->action_root}addItem/{$p["id_product"]}" class="button">Add to shopping cart</a></li>
+                        <li><a href="{$conf->action_root}addItem/{$p["id_product"]}" class="button">Dodaj do koszyka</a></li>
                     </ul>
                 </article>
             {/foreach}

@@ -6,7 +6,7 @@
 -->
 <html>
 <head>
-    <title>Store</title>
+    <title>Sklep</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="{$conf->app_url}/css/main.css"/>
@@ -14,30 +14,42 @@
 
 
 <body class="is-preload">
-<div style="margin-top: 30px; margin-left: 1110px;">
-    <strong>Username:</strong> {$username}
+<div style="margin-top: 30px; margin-right: 50px; text-align: right">
+    <strong>{$username}</strong>
 </div>
 
 <!-- Wrapper -->
 <div id="wrapper">
-
     <!-- Main -->
     <div id="main">
-
         <div class="inner">
-
-
             <!-- Header -->
-            <header id="header" style="padding-top: 20px">
-                <a href="index.html" class="logo"><strong>Store</strong> online</a>
-                <ul class="icons">
-                    <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-                    <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-                    <li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-                    <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-                    <li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
-                </ul>
-            </header>
+            <div style="padding-bottom: 3em">
+                <header id="header" style="padding-top: 20px">
+                    <a href="#" class="logo"><strong>Sklep</strong> internetowy</a>
+                    <ul class="icons">
+                        <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                        <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                        <li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+                        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                        <li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+                    </ul>
+                </header>
+            </div>
+
+            {block name=messages}
+                {if $msgs->isMessage()}
+                    <div class="messages">
+                        <ul>
+                            {foreach $msgs->getMessages() as $msg}
+                                {strip}
+                                    <li class="msg {if $msg->isError()}error{/if} {if $msg->isWarning()}warning{/if} {if $msg->isInfo()}info{/if}" >{$msg->text}</li>
+                                {/strip}
+                            {/foreach}
+                        </ul>
+                    </div>
+                {/if}
+            {/block}
 
             {block name=content}
 
@@ -50,7 +62,7 @@
                     <!-- Search -->
                     <section id="search" class="alt">
                         <form method="post" action="#">
-                            <input type="text" name="query" id="query" placeholder="Search" />
+                            <input type="text" name="query" id="query" placeholder="Szukaj" />
                         </form>
                     </section>
 
@@ -60,11 +72,11 @@
                             <h2>Menu</h2>
                         </header>
                         <ul>
-                            <li><a href="{$conf->action_root}home">Homepage</a></li>
-                            <li><a href="{$conf->action_root}loginShow">Sign in</a></li>
-                            <li><a href="{$conf->action_root}registrationShow">Sign up</a></li>
-                            <li><a href="{$conf->action_root}shoppingCartShow">Shopping cart</a></li>
-                            <li><a href="{$conf->action_root}logout">Log out</a></li>
+                            <li><a href="{$conf->action_root}home">Strona główna</a></li>
+                            <li><a href="{$conf->action_root}loginShow">Zaloguj</a></li>
+                            <li><a href="{$conf->action_root}registrationShow">Zarejestruj</a></li>
+                            <li><a href="{$conf->action_root}shoppingCartShow">Koszyk</a></li>
+                            <li><a href="{$conf->action_root}logout">Wyloguj</a></li>
                         </ul>
                     </nav>
 
@@ -73,7 +85,7 @@
                     <!-- Section -->
                     <section>
                         <header class="major">
-                            <h2>Get in touch</h2>
+                            <h2>Kontakt</h2>
                         </header>
                         <p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
                         <ul class="contact">
@@ -99,24 +111,11 @@
                     <script src="{$conf->app_url}/js/main.js"></script>
             </div>
 
-            {block name=messages}
-
-                {if $msgs->isMessage()}
-                    <div class="messages bottom-margin">
-                        <ul>
-                            {foreach $msgs->getMessages() as $msg}
-                                {strip}
-                                    <li class="msg {if $msg->isError()}error{/if} {if $msg->isWarning()}warning{/if} {if $msg->isInfo()}info{/if}">{$msg->text}</li>
-                                {/strip}
-                            {/foreach}
-                        </ul>
-                    </div>
-                {/if}
-
-            {/block}
-
         </div>
+
+
     </div>
+
 </div>
 
 

@@ -26,10 +26,10 @@ class LoginCtrl {
             return false;
 
         if (empty($this->form->username)) {
-            Utils::addErrorMessage('Enter username');
+            Utils::addErrorMessage('Wprowadź nazwę użytkownika.');
         }
         if (empty($this->form->password)) {
-            Utils::addErrorMessage('Enter password');
+            Utils::addErrorMessage('Wprowadź hasło.');
         }
 
         if (App::getMessages()->isError())
@@ -52,10 +52,10 @@ class LoginCtrl {
                 SessionUtils::store("username", $result[0]['username']);
 //                error_log("Zapisane: ". SessionUtils::load("id_user", true));
 
-                Utils::addErrorMessage("Zalogowano użytkownika: ". $this->form->username);
+                Utils::addInfoMessage("Zalogowano użytkownika: ". $this->form->username);
                 App::getRouter()->forwardTo('home');
             } else {
-                Utils::addErrorMessage('Incorrect username or password');
+                Utils::addErrorMessage('Niepoprawna nazwa użytkownika lub hasło.');
                 $this->generateView();
             }
         } else {
@@ -70,10 +70,10 @@ class LoginCtrl {
     public function action_logout(){
         RoleUtils::removeRole('user');
         SessionUtils::remove('username');
-        error_log("Logout:".SessionUtils::load("username", true));
         session_destroy();
-        App::getRouter()->redirectTo('home');
         Utils::addInfoMessage("Poprawnie wylogowano użytkownika.");
+        App::getRouter()->forwardTo('home');
+
 
     }
 

@@ -18,13 +18,18 @@ class ShoppingCartCtrl {
     }
 
     public function action_addItem() {
+
+
         $id_product = ParamUtils::getFromCleanURL(1, true, 'Błędne wywołanie aplikacji');
 
-//        if(!RoleUtils::inRole('user')){
-////            echo "You have to sign in";
-////        }
-
         try {
+
+            $productFromCart = App::getDB()->select("shopping_cart", [
+                "id_product",
+            ], [
+                "id_product" => $id_product
+            ]);
+
             $records = App::getDB()->select("product", [
                 "id_product",
                 "name",
@@ -35,29 +40,48 @@ class ShoppingCartCtrl {
 
             $id_user = SessionUtils::load("id_user", true);
 
-//            error_log("id_product: " . $this->records[0]["id_product"]);
-            
-            App::getDB()->insert("shopping_cart", [
-                "id_product" => $records[0]["id_product"],
-                "name_product" => $records[0]["name"],
-                "price_product" => $records[0]["price"],
-                "id_user" => $id_user
-            ]);
+            if(!$productFromCart) {
+                App::getDB()->insert("shopping_cart", [
+                    "id_product" => $records[0]["id_product"],
+                    "name_product" => $records[0]["name"],
+                    "price_product" => $records[0]["price"],
+                    "id_user" => $id_user
+                ]);
+
+            } else {
+                Utils::addInfoMessage("Produkt znajduje się już w koszyku.");
+            }
 
         } catch (\Exception $e) {
-            error_log($e->getMessage());
-            Utils::addErrorMessage('Insert error');
+            Utils::addErrorMessage('Błąd podczas wstawiania rekrodu do bazy');
             if (App::getConf()->debug)
                 Utils::addErrorMessage($e->getMessage());
         }
 
-        App::getRouter()->redirectTo('shoppingCartShow');
+        App::getRouter()->forwardTo('shoppingCartShow');
+    }
 
+    public function action_deleteItem() {
+
+        $id_product = ParamUtils::getFromCleanURL(1, true, 'Błędne wywołanie aplikacji');
+
+        $productFromCart = App::getDB()->select("shopping_cart", [
+            "id_product",
+        ], [
+            "id_product" => $id_product
+        ]);
+
+        if($productFromCart) {
+            App::getDB()->delete("shopping_cart", ["id_product" => $id_product]);
+        }
+        Utils::addInfoMessage("Usunięto produkt z koszyka.");
+        App::getRouter()->forwardTo('shoppingCartShow');
     }
 
     public function action_shoppingCartShow() {
         $id_user = SessionUtils::load("id_user", true);
         $this->records = App::getDB()->select("shopping_cart", [
+            "id_product",
             "name_product",
             "price_product",
         ], [

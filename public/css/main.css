@@ -2115,7 +2115,7 @@ button,
   display: -ms-flex;
   display: flex; }
   #banner h1 {
-    margin-top: -0.125em; }
+    margin-top: -0.8em; }
   #banner .content {
     -moz-flex-grow: 1;
     -webkit-flex-grow: 1;
@@ -2271,3 +2271,19 @@ button,
     border-top: 0;
     margin-top: 0;
     padding-top: 0; }
+
+.messages {
+  margin-top: 0em;}
+.messages ul {list-style-type: none; padding: 0;}
+.msg {
+  border: 2px solid #9fa3a6;
+  border-radius: 0.5em;
+  padding: 0.7em;
+  margin-bottom: 0.5em;
+  width: 300px;
+  font-weight: bolder;
+  color: #3d4449}
+
+.error {background-color: #ffffff}
+.warning {background-color: #ffffff}
+.info {background-color: #ffffff}

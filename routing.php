@@ -16,3 +16,4 @@ Utils::addRoute('registration', 'RegistrationCtrl');
 Utils::addRoute('home', 'HomeCtrl');
 Utils::addRoute('shoppingCartShow', 'ShoppingCartCtrl');
 Utils::addRoute('addItem', 'ShoppingCartCtrl');
+Utils::addRoute('deleteItem', 'ShoppingCartCtrl');

@@ -3,7 +3,7 @@
 namespace app\forms;
 
 class ProductForm {
-    public $id;
+    public $id_product;
     public $name;
     public $price;
 }

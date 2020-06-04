@@ -27,46 +27,46 @@ class RegistrationCtrl {
         $this->form->username = $v->validateFromPost('username', [
             'trim' => true,
             'required' => true,
-            'required_message' => 'Enter username',
-            'min_length' => 2,
+            'required_message' => 'Wprowadź nazwę użytkownika.',
+            'min_length' => 3,
             'max_length' => 20,
-            'validator_message' => 'Incorrect username format'
+            'validator_message' => 'Nazwa użytkownika powinna mieć od 3 do 20 znaków.'
         ]);
 
         $this->form->password = $v->validateFromPost('password', [
             'trim' => true,
             'required' => true,
-            'required_message' => 'Enter password',
-            'min_length' => 2,
+            'required_message' => 'Wprowadź hasło.',
+            'min_length' => 3,
             'max_length' => 20,
-            'validator_message' => 'Incorrect password format'
+            'validator_message' => 'Hasło powinno mieć od 3 do 30 znaków.'
         ]);
 
         $this->form->first_name = $v->validateFromPost('first_name', [
             'trim' => true,
             'required' => true,
-            'required_message' => 'Enter first name',
-            'min_length' => 2,
+            'required_message' => 'Wprowadź imię.',
+            'min_length' => 3,
             'max_length' => 20,
-            'validator_message' => 'Incorrect first name format'
+            'validator_message' => 'Hasło powinno mieć od 3 do 30 znaków.'
         ]);
 
         $this->form->last_name = $v->validateFromPost('last_name', [
             'trim' => true,
             'required' => true,
-            'required_message' => 'Enter last name',
+            'required_message' => 'Wprowadź nazwisko.',
             'min_length' => 2,
             'max_length' => 20,
-            'validator_message' => 'Incorrect last name format'
+            'validator_message' => 'Nazwisko powinno mieć od 3 do 30 znaków.'
         ]);
 
         $this->form->email = $v->validateFromPost('email', [
             'trim' => true,
             'required' => true,
-            'required_message' => 'Enter email',
-            'min_length' => 2,
+            'required_message' => 'Wprowadź adres email.',
+            'min_length' => 3,
             'max_length' => 20,
-            'validator_message' => 'Incorrect email format'
+            'validator_message' => 'Adres email powinien mieć od 3 do 30 znaków.'
         ]);
 
         return !App::getMessages()->isError();
@@ -79,9 +79,8 @@ class RegistrationCtrl {
     }
 
     public function action_registration() {
-//        error_log($this->form->username);
+
         if($this->validate()) {
-//            error_log("tak");
             try {
                 App::getDB()->insert("user", [
                     "username" => $this->form->username,
@@ -92,13 +91,11 @@ class RegistrationCtrl {
                 ]);
                 App::getRouter()->redirectTo('Login.tpl');
             } catch (\PDOException $e) {
-//                error_log($e->getMessage());
-                Utils::addErrorMessage('Insert error');
+                Utils::addErrorMessage('Błąd podczas wprowadzania rekrodu do bazy.');
                 if (App::getConf()->debug)
                     Utils::addErrorMessage($e->getMessage());
             }
         } else {
-//            error_log("nie");
             $this->generateView();
         }
     }
