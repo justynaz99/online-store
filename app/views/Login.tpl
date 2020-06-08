@@ -1,5 +1,19 @@
 {extends file="main.tpl"}
 
+{block name="menuHome"}
+    <li><a href="{$conf->action_root}home">Strona główna</a></li>
+{/block}
+
+{block name="menuLogIn"}
+    <li><a href="{$conf->action_root}loginShow">Zaloguj</a></li>
+{/block}
+
+{block name="menuRegistration"}
+    <li><a href="{$conf->action_root}registration">Zarejestruj</a></li>
+{/block}
+
+
+
 {block name=content}
 
 <form action="{$conf->action_root}login" style="width: 600px; margin-top: 3%" method="post">

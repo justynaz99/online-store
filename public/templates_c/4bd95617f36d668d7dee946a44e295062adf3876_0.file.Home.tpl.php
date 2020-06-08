@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-04 10:35:44
+/* Smarty version 3.1.34-dev-7, created on 2020-06-08 10:36:43
   from 'C:\xampp\htdocs\onlineStore\app\views\Home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ed8b260b25355_31536453',
+  'unifunc' => 'content_5eddf89b271049_38872214',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4bd95617f36d668d7dee946a44e295062adf3876' => 
     array (
       0 => 'C:\\xampp\\htdocs\\onlineStore\\app\\views\\Home.tpl',
-      1 => 1591259742,
+      1 => 1591605397,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ed8b260b25355_31536453 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eddf89b271049_38872214 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
@@ -28,16 +28,86 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_15942490495ed8b260b08979_33748613', "content");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6966954645eddf89b259f37_26224424', "menuHome");
+?>
+
+
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_16407942685eddf89b261a53_04096909', "menuLogIn");
+?>
+
+
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4386857705eddf89b263015_90037165', "menuRegistration");
+?>
+
+
+
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_226066475eddf89b2643e5_59011463', "content");
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
+/* {block "menuHome"} */
+class Block_6966954645eddf89b259f37_26224424 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'menuHome' => 
+  array (
+    0 => 'Block_6966954645eddf89b259f37_26224424',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+
+    <li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+home">Strona główna</a></li>
+<?php
+}
+}
+/* {/block "menuHome"} */
+/* {block "menuLogIn"} */
+class Block_16407942685eddf89b261a53_04096909 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'menuLogIn' => 
+  array (
+    0 => 'Block_16407942685eddf89b261a53_04096909',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+
+    <li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+loginShow">Zaloguj</a></li>
+<?php
+}
+}
+/* {/block "menuLogIn"} */
+/* {block "menuRegistration"} */
+class Block_4386857705eddf89b263015_90037165 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'menuRegistration' => 
+  array (
+    0 => 'Block_4386857705eddf89b263015_90037165',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+
+    <li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+registration">Zarejestruj</a></li>
+<?php
+}
+}
+/* {/block "menuRegistration"} */
 /* {block "content"} */
-class Block_15942490495ed8b260b08979_33748613 extends Smarty_Internal_Block
+class Block_226066475eddf89b2643e5_59011463 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_15942490495ed8b260b08979_33748613',
+    0 => 'Block_226066475eddf89b2643e5_59011463',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -80,12 +150,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['p']->value) {
 </h3>
                     <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
                     <p><?php echo $_smarty_tpl->tpl_vars['p']->value["price"];?>
-</p>
-                    <ul class="actions">
-                        <li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
-addItem/<?php echo $_smarty_tpl->tpl_vars['p']->value["id_product"];?>
-" class="button">Dodaj do koszyka</a></li>
-                    </ul>
+ zł</p>
+
                 </article>
             <?php
 }

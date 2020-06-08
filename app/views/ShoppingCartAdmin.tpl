@@ -7,7 +7,7 @@
 {/block}
 
 {block name="menuHome"}
-    <li><a href="{$conf->action_root}homeUser">Strona główna</a></li>
+    <li><a href="{$conf->action_root}homeAdmin">Strona główna</a></li>
 {/block}
 
 {block name="menuShoppingCart"}
@@ -17,7 +17,6 @@
 {block name="menuLogOut"}
     <li><a href="{$conf->action_root}logout">Wyloguj</a></li>
 {/block}
-
 
 {block name="content"}
 

@@ -72,8 +72,6 @@ class RegistrationCtrl {
         return !App::getMessages()->isError();
     }
 
-
-
     public function action_registrationShow() {
         $this->generateView();
     }
@@ -88,8 +86,12 @@ class RegistrationCtrl {
                     "first_name" => $this->form->first_name,
                     "last_name" => $this->form->last_name,
                     "email" => $this->form->email,
+                    "role" => "user",
+                    "date_added" => date("Y-m-d"),
+                    "who_added" => $this->form->first_name . " " . $this->form->last_name
                 ]);
-                App::getRouter()->redirectTo('Login.tpl');
+                App::getRouter()->redirectTo('login');
+                Utils::addInfoMessage("Zarejestrowano użytkownika: " . $this->form->username);
             } catch (\PDOException $e) {
                 Utils::addErrorMessage('Błąd podczas wprowadzania rekrodu do bazy.');
                 if (App::getConf()->debug)

@@ -14,9 +14,8 @@
 
 
 <body class="is-preload">
-<div style="margin-top: 30px; margin-right: 50px; text-align: right">
-    <strong>{$username}</strong>
-</div>
+
+{block name=username}{/block}
 
 <!-- Wrapper -->
 <div id="wrapper">
@@ -25,7 +24,7 @@
         <div class="inner">
             <!-- Header -->
             <div style="padding-bottom: 3em">
-                <header id="header" style="padding-top: 20px">
+                <header id="header" style="padding-top: 60px">
                     <a href="#" class="logo"><strong>Sklep</strong> internetowy</a>
                     <ul class="icons">
                         <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
@@ -72,11 +71,11 @@
                             <h2>Menu</h2>
                         </header>
                         <ul>
-                            <li><a href="{$conf->action_root}home">Strona główna</a></li>
-                            <li><a href="{$conf->action_root}loginShow">Zaloguj</a></li>
-                            <li><a href="{$conf->action_root}registrationShow">Zarejestruj</a></li>
-                            <li><a href="{$conf->action_root}shoppingCartShow">Koszyk</a></li>
-                            <li><a href="{$conf->action_root}logout">Wyloguj</a></li>
+                            {block name=menuHome}{/block}
+                            {block name=menuLogIn}{/block}
+                            {block name=menuRegistration}{/block}
+                            {block name=menuShoppingCart}{/block}
+                            {block name=menuLogOut}{/block}
                         </ul>
                     </nav>
 

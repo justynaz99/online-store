@@ -46,14 +46,31 @@ class LoginCtrl {
                 "password" => $this->form->password
             ]);
 
-            if($result) { //czemu result jest true albo false
-                RoleUtils::addRole('user');
+            if($result) {
+                $role = App::getDB()->select("user", "*", [
+                    "username" => $this->form->username,
+                    "password" => $this->form->password
+                ]);
+                if($role[0]['role']=="user") {
+                    RoleUtils::addRole('user');
+
+                }
+                else {
+                    RoleUtils::addRole('admin');
+                }
+
                 SessionUtils::store("id_user", $result[0]['id_user']);
                 SessionUtils::store("username", $result[0]['username']);
-//                error_log("Zapisane: ". SessionUtils::load("id_user", true));
 
                 Utils::addInfoMessage("Zalogowano użytkownika: ". $this->form->username);
-                App::getRouter()->forwardTo('home');
+
+                if(RoleUtils::inRole('user')) {
+                    App::getRouter()->redirectTo('homeUser');
+                }
+                else if(RoleUtils::inRole('admin')) {
+                    App::getRouter()->redirectTo('homeAdmin');
+                }
+
             } else {
                 Utils::addErrorMessage('Niepoprawna nazwa użytkownika lub hasło.');
                 $this->generateView();
@@ -72,21 +89,21 @@ class LoginCtrl {
         SessionUtils::remove('username');
         session_destroy();
         Utils::addInfoMessage("Poprawnie wylogowano użytkownika.");
-        App::getRouter()->forwardTo('home');
+        App::getRouter()->redirectTo('home');
 
 
     }
 
-    public function isLogIn() {
-        if(RoleUtils::inRole('user')) {
-            Utils::addInfoMessage("Jesteś już zalogowany.");
-        }
-    }
+//    public function isLogIn() {
+//        if(RoleUtils::inRole('user')) {
+//            Utils::addInfoMessage("Jesteś już zalogowany.");
+//        }
+//    }
 
 
     public function generateView() {
 //        App::getSmarty()->assign('form', $this->form);
-        $this->isLogIn();
+//        $this->isLogIn();
         App::getSmarty()->assign('username', SessionUtils::load('username', true));
         App::getSmarty()->display('Login.tpl');
     }

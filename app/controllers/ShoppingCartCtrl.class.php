@@ -21,13 +21,15 @@ class ShoppingCartCtrl {
 
 
         $id_product = ParamUtils::getFromCleanURL(1, true, 'Błędne wywołanie aplikacji');
+        $id_user = SessionUtils::load("id_user", true);
 
         try {
 
             $productFromCart = App::getDB()->select("shopping_cart", [
                 "id_product",
             ], [
-                "id_product" => $id_product
+                "id_product" => $id_product,
+                "id_user" => $id_user
             ]);
 
             $records = App::getDB()->select("product", [
@@ -38,7 +40,7 @@ class ShoppingCartCtrl {
                 "id_product" => $id_product
             ]);
 
-            $id_user = SessionUtils::load("id_user", true);
+
 
             if(!$productFromCart) {
                 App::getDB()->insert("shopping_cart", [
@@ -93,7 +95,13 @@ class ShoppingCartCtrl {
     public function generateView() {
         App::getSmarty()->assign("list", $this->records);
         App::getSmarty()->assign('username', SessionUtils::load('username', true));
-        App::getSmarty()->display('ShoppingCart.tpl');
+        if(RoleUtils::inRole('user')) {
+            App::getSmarty()->display('ShoppingCart.tpl');
+        }
+        else if(RoleUtils::inRole('admin')) {
+            App::getSmarty()->display('ShoppingCartAdmin.tpl');
+        }
+
     }
 
 }
