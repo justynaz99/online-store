@@ -12,6 +12,7 @@ class ShoppingCartCtrl {
 
     private $form;
     private $records;
+    private $value;
 
     public function __construct() {
         $this->form = new ProductForm();
@@ -24,7 +25,6 @@ class ShoppingCartCtrl {
         $id_user = SessionUtils::load("id_user", true);
 
         try {
-
             $productFromCart = App::getDB()->select("shopping_cart", [
                 "id_product",
             ], [
@@ -45,14 +45,21 @@ class ShoppingCartCtrl {
             if(!$productFromCart) {
                 App::getDB()->insert("shopping_cart", [
                     "id_product" => $records[0]["id_product"],
-                    "name_product" => $records[0]["name"],
                     "price_product" => $records[0]["price"],
-                    "id_user" => $id_user
+                    "id_user" => $id_user,
+                    "quantity" => 1
                 ]);
+                Utils::addInfoMessage("Produkt został dodany do koszyka.");
 
             } else {
-                Utils::addInfoMessage("Produkt znajduje się już w koszyku.");
+                App::getDB()->update("shopping_cart", [
+                    "quantity[+]" => 1
+                ], [
+                    "id_product" => $id_product,
+                    "id_user" => $id_user
+                ]);
             }
+
 
         } catch (\Exception $e) {
             Utils::addErrorMessage('Błąd podczas wstawiania rekrodu do bazy');
@@ -60,47 +67,94 @@ class ShoppingCartCtrl {
                 Utils::addErrorMessage($e->getMessage());
         }
 
-        App::getRouter()->forwardTo('shoppingCartShow');
+        if(RoleUtils::inRole('user')) {
+            App::getRouter()->redirectTo('homeUser');
+        }
+        else if(RoleUtils::inRole('seller')) {
+            App::getRouter()->redirectTo('homeSeller');
+        }
+
     }
 
     public function action_deleteItem() {
 
         $id_product = ParamUtils::getFromCleanURL(1, true, 'Błędne wywołanie aplikacji');
+        $id_user = SessionUtils::load("id_user", true);
 
-        $productFromCart = App::getDB()->select("shopping_cart", [
-            "id_product",
+        $records = App::getDB()->select("shopping_cart", [
+            "quantity",
         ], [
-            "id_product" => $id_product
+            "id_product" => $id_product,
+            "id_user" => $id_user
         ]);
 
-        if($productFromCart) {
-            App::getDB()->delete("shopping_cart", ["id_product" => $id_product]);
+        if($records[0]["quantity"] > 1) {
+            App::getDB()->update("shopping_cart", [
+                "quantity[-]" => 1
+            ], [
+                "id_product" => $id_product,
+                "id_user" => $id_user
+            ]);
         }
+        else if ($records[0]["quantity"] == 1) {
+            App::getDB()->delete("shopping_cart", ["id_product" => $id_product]);
+
+        }
+
         Utils::addInfoMessage("Usunięto produkt z koszyka.");
-        App::getRouter()->forwardTo('shoppingCartShow');
+        App::getRouter()->redirectTo('shoppingCartShow');
     }
 
     public function action_shoppingCartShow() {
         $id_user = SessionUtils::load("id_user", true);
         $this->records = App::getDB()->select("shopping_cart", [
-            "id_product",
-            "name_product",
-            "price_product",
+            "[>]product" => "id_product"
         ], [
-            "id_user" => $id_user
+
+            "shopping_cart.id_product",
+            "product.name",
+            "shopping_cart.price_product",
+            "shopping_cart.quantity"
+        ], [
+            "id_user" => $id_user,
         ]);
+
+        $this->value = App::getDB()->sum("shopping_cart","price_product");
+
         $this->generateView();
     }
 
+    public function isEmpty() {
+        $id_user = SessionUtils::load("id_user", true);
+
+        $count = App::getDB()->count("shopping_cart", [
+            "id_product"
+        ], [
+            "id_user" => $id_user
+        ]);
+
+        if($count == 0)
+            return true;
+        else
+            return false;
+    }
+
+
     public function generateView() {
         App::getSmarty()->assign("list", $this->records);
+        App::getSmarty()->assign("value", $this->value);
         App::getSmarty()->assign('username', SessionUtils::load('username', true));
-        if(RoleUtils::inRole('user')) {
+
+        if($this->isEmpty()){
+            App::getSmarty()->display('ShoppingCartEmpty.tpl');
+        }
+        else {
             App::getSmarty()->display('ShoppingCart.tpl');
         }
-        else if(RoleUtils::inRole('admin')) {
-            App::getSmarty()->display('ShoppingCartAdmin.tpl');
-        }
+
+
+
+
 
     }
 

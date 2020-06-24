@@ -37,8 +37,18 @@
 
     <section>
         <header class="major">
-            <h2>Ipsum sed dolor</h2>
+            <h2>Lista produktów</h2>
         </header>
+
+        <div class="row gtr-200">
+        <form action="{$conf->action_root}home" method="post" style="width: 400px">
+                <div class="col-6 col-12-xsmall">
+                    <input type="text" name="name" id="name" value="{$productForm->name}" placeholder="Nazwa produktu" /><br>
+                    <input type="submit" value="Szukaj" class="primary" />
+                </div>
+        </form>
+        </div>
+
         <div class="posts" style="margin-top: -1em">
             {foreach $products as $p}
                 <article>

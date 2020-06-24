@@ -6,7 +6,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 html, body, div, span, applet, object,
-iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
+iframe, h1, h2, h3, h4, h5, h6, h7, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
 code, del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var, b,
@@ -130,13 +130,13 @@ em, i {
 p {
   margin: 0 0 2em 0; }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, h7 {
   color: #3d4449;
   font-family: "Roboto Slab", serif;
   font-weight: 700;
   line-height: 1.5;
   margin: 0 0 1em 0; }
-  h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  h1 a, h2 a, h3 a, h4 a, h5 a, h6 a h7{
     color: inherit;
     text-decoration: none;
     border-bottom: 0; }
@@ -153,6 +153,9 @@ h3 {
   font-size: 1.25em; }
 
 h4 {
+  font-size: 1.1em; }
+
+h7 {
   font-size: 1.1em; }
 
 h5 {

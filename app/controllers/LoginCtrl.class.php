@@ -51,11 +51,14 @@ class LoginCtrl {
                     "username" => $this->form->username,
                     "password" => $this->form->password
                 ]);
-                if($role[0]['role']=="user") {
+                if($role[0]['role'] == "user") {
                     RoleUtils::addRole('user');
 
                 }
-                else {
+                else if($role[0]['role'] == "seller") {
+                    RoleUtils::addRole('seller');
+                }
+                else if($role[0]['role'] == "admin") {
                     RoleUtils::addRole('admin');
                 }
 
@@ -66,6 +69,9 @@ class LoginCtrl {
 
                 if(RoleUtils::inRole('user')) {
                     App::getRouter()->redirectTo('homeUser');
+                }
+                else if(RoleUtils::inRole('seller')) {
+                    App::getRouter()->redirectTo('homeSeller');
                 }
                 else if(RoleUtils::inRole('admin')) {
                     App::getRouter()->redirectTo('homeAdmin');
@@ -85,8 +91,7 @@ class LoginCtrl {
     }
 
     public function action_logout(){
-        RoleUtils::removeRole('user');
-        SessionUtils::remove('username');
+
         session_destroy();
         Utils::addInfoMessage("Poprawnie wylogowano użytkownika.");
         App::getRouter()->redirectTo('home');

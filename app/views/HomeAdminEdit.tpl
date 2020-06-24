@@ -36,14 +36,15 @@
     </section>
 
     <section>
-        <header class="major" style="float: left">
+        <header class="major" style="float:left">
             <h2>Lista użytkowników</h2>
         </header>
-{*        <a href="{$conf->action_root}homeAdminEdit/{$user["id_user"]}" class="button">Edytuj</a></td>*}
-        <div style=>
-            <div class="table-wrapper" style="width: 800px; clear: both">
+        <a href="{$conf->action_root}homeAdminSave/{$user["id_user"]}" class="button">Zapisz</a></td>
+        <div>
+            <div class="table-wrapper" style="width: 1000px; clear:both">
                 <table>
                     <tr>
+                        <td align="center"><h4>ID</h4></td>
                         <td align="center"><h4>Login</h4></td>
                         <td align="center"><h4>Hasło</h4></td>
                         <td align="center"><h4>Imię</h4></td>
@@ -54,12 +55,13 @@
                     </tr>
                     {foreach $users as $user}
                         <tr>
-                            <td align="center">{$user["username"]}</td>
-                            <td align="center">{$user["password"]}</td>
-                            <td align="center">{$user["first_name"]}</td>
-                            <td align="center">{$user["last_name"]}</td>
-                            <td align="center">{$user["email"]}</td>
-                            <td align="center">{$user["role"]}</td>
+                            <td align="center">{$user["id_user"]}</td>
+                            <td align="center"><input style="width: 100px" type="text" name="username" id="username" placeholder="Login" /></td>
+                            <td align="center"><input style="width: 100px" type="text" name="password" id="password" placeholder="Hasło" /></td>
+                            <td align="center"><input style="width: 100px" type="text" name="first_name" id="first_name" placeholder="Imię" /></td>
+                            <td align="center"><input style="width: 100px" type="text" name="last_name" id="last_name" placeholder="Nazwisko" /></td>
+                            <td align="center"><input style="width: 100px" type="text" name="email" id="email" placeholder="Email" /></td>
+                            <td align="center"><input style="width: 100px" type="text" name="role" id="role" placeholder="Rola" /></td>
                             <td align="center"><a href="{$conf->action_root}deleteUser/{$user["id_user"]}" class="button">Usuń</a></td>
                         </tr>
                     {/foreach}

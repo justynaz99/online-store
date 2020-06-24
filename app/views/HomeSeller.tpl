@@ -7,35 +7,17 @@
 {/block}
 
 {block name="menuHome"}
-    <li><a href="{$conf->action_root}homeUser">Strona główna</a></li>
+    <li><a href="{$conf->action_root}homeSeller">Strona główna</a></li>
 {/block}
 
-{block name="menuShoppingCart"}
-    <li><a href="{$conf->action_root}shoppingCartShow">Koszyk</a></li>
-{/block}
+{*{block name="menuShoppingCart"}*}
+{*    <li><a href="{$conf->action_root}shoppingCartShow">Koszyk</a></li>*}
+{*{/block}*}
 
 {block name="menuLogOut"}
     <li><a href="{$conf->action_root}logout">Wyloguj</a></li>
 {/block}
 
-{block name="menuOrders"}
-    <li><a href="{$conf->action_root}orderShow">Zamówienia</a></li>
-{/block}
-
-{block name="header"}
-    <div style="padding-bottom: 3em">
-        <header id="header" style="padding-top: 20px">
-            <a href="#" class="logo"><strong>Sklep</strong> internetowy</a>
-            <ul class="icons">
-                <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-                <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-                <li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-                <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-                <li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
-            </ul>
-        </header>
-    </div>
-{/block}
 
 {block name="content"}
 
@@ -61,7 +43,28 @@
         <header class="major">
             <h2>Ipsum sed dolor</h2>
         </header>
-        <div class="posts" style="margin-top: -1em">
+
+        <form action="{$conf->action_root}addToList" style="width: 600px; margin-top: 1em" method="post">
+            <h3>Dodaj produkt do listy</h3>
+            <div class="row gtr-uniform">
+                <div class="col-6 col-12-xsmall">
+                    <input type="text" name="name_product" id="name_product" value="" placeholder="Nazwa produktu" />
+                </div>
+                <br>
+                <div class="col-6 col-12-xsmall">
+                    <input type="text" name="price_product" id="price_product" value="" placeholder="Cena produktu" />
+                </div>
+                <div class="col-12">
+                    <ul class="actions">
+                        <li><input type="submit" value="Dodaj" class="button" /></li>
+                        <li><input type="reset" value="Resetuj" /></li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+
+
+        <div class="posts" style="margin-top: 1em">
             {foreach $products as $p}
                 <article>
                     <a href="#" class="image"><img src="images/pic{$p["id_product"]}.jpg" alt="" /></a>
@@ -69,7 +72,8 @@
                     <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
                     <p>{$p["price"]} zł</p>
                     <ul class="actions">
-                        <li><a href="{$conf->action_root}addItem/{$p["id_product"]}" class="button">Dodaj do koszyka</a></li>
+{*                        <li><a href="{$conf->action_root}addItem/{$p["id_product"]}" class="button">Dodaj do koszyka</a></li>*}
+                        <li><a href="{$conf->action_root}deleteFromList/{$p["id_product"]}" class="button">Usuń produkt z listy</a></li>
                     </ul>
                 </article>
             {/foreach}

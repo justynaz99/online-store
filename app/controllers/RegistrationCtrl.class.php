@@ -88,7 +88,7 @@ class RegistrationCtrl {
                     "email" => $this->form->email,
                     "role" => "user",
                     "date_added" => date("Y-m-d"),
-                    "who_added" => $this->form->first_name . " " . $this->form->last_name
+                    "who_added" => $this->form->id
                 ]);
                 App::getRouter()->redirectTo('login');
                 Utils::addInfoMessage("Zarejestrowano użytkownika: " . $this->form->username);

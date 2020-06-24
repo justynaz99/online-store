@@ -15,9 +15,10 @@
 
 
 {block name="content"}
-    <form action="{$conf->action_root}registration" style="width: 600px; margin-top: 3%" method="post">
-        <h3>Zarejestruj się</h3>
-        <div class="row gtr-uniform">
+
+    <div class="row gtr-200">
+        <form action="{$conf->action_root}registration" style="width: 400px; margin-top: 3%" method="post">
+            <h3>Zarejestruj się</h3>
             <div class="col-6 col-12-xsmall">
                 <input type="text" name="username" id="username" value="{$form->username}" placeholder="Nazwa użytkownika" /><br>
                 <input type="password" name="password" id="password" value="{$form->password}" placeholder="Hasło" /><br>
@@ -33,5 +34,6 @@
                 </ul>
             </div>
             <input type="hidden" name="id" value="{$form->id}">
-    </form>
+        </form>
+    </div>
 {/block}

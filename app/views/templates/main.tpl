@@ -58,13 +58,6 @@
             <div id="sidebar">
                 <div class="inner">
 
-                    <!-- Search -->
-                    <section id="search" class="alt">
-                        <form method="post" action="#">
-                            <input type="text" name="query" id="query" placeholder="Szukaj" />
-                        </form>
-                    </section>
-
                     <!-- Menu -->
                     <nav id="menu">
                         <header class="major">
@@ -75,6 +68,7 @@
                             {block name=menuLogIn}{/block}
                             {block name=menuRegistration}{/block}
                             {block name=menuShoppingCart}{/block}
+                            {block name=menuOrders}{/block}
                             {block name=menuLogOut}{/block}
                         </ul>
                     </nav>

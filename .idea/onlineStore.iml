@@ -5,5 +5,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="php_09_ajax" />
+    <orderEntry type="module" module-name="Menu" />
+    <orderEntry type="module" module-name="html5up-editorial" />
   </component>
 </module>

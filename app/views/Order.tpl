@@ -26,24 +26,28 @@
 {block name="content"}
 
     <div style="margin-top: 20px">
-        <h4>Twój koszyk:</h4>
+        <h4>Twoje zamówienia:</h4>
         <div class="table-wrapper" style="width: 600px">
-            <table>
-                {foreach $list as $row}
+            {foreach $orders as $order}
+                <table>
                     <tr>
-                        <td>{$row["name"]}</td>
-                        <td align="left">{$row["price_product"]}</td>
-                        <td align="right">{$row["quantity"]}</td>
-                        <td align="right"><a href="{$conf->action_root}deleteItem/{$row["id_product"]}" class="button">Usuń</a></td>
+                        <td><h7>{$order["id_order"]}</h7></td>
+                        <td align="left"><h7>{$order["value"]}</h7></td>
+                        <td align="right"><h7>{$order["date"]}</h7></td>
                     </tr>
-                {/foreach}
-            </table>
-            <div style="margin-bottom: 20px; margin-top: 20px">
-                <h7>{$value} zł</h7>
-            </div>
+                    {foreach $list as $row}
+                        <tr>
+                            <td>{$row["name"]}</td>
+                            <td align="left">{$row["price_product"]}</td>
+                            <td align="right">{$row["quantity"]}</td>
+                        </tr>
+                    {/foreach}
+                </table>
+            {/foreach}
 
-            <a href="{$conf->action_root}order" class="button">Złóż zamówienie</a>
+
         </div>
     </div>
+
 
 {/block}
