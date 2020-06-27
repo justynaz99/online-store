@@ -9,7 +9,7 @@
 {/block}
 
 {block name="menuRegistration"}
-    <li><a href="{$conf->action_root}registration">Zarejestruj</a></li>
+    <li><a href="{$conf->action_root}registrationShow">Zarejestruj</a></li>
 {/block}
 
 

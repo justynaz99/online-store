@@ -53,7 +53,6 @@ class LoginCtrl {
                 ]);
                 if($role[0]['role'] == "user") {
                     RoleUtils::addRole('user');
-
                 }
                 else if($role[0]['role'] == "seller") {
                     RoleUtils::addRole('seller');
@@ -67,15 +66,8 @@ class LoginCtrl {
 
                 Utils::addInfoMessage("Zalogowano użytkownika: ". $this->form->username);
 
-                if(RoleUtils::inRole('user')) {
-                    App::getRouter()->redirectTo('homeUser');
-                }
-                else if(RoleUtils::inRole('seller')) {
-                    App::getRouter()->redirectTo('homeSeller');
-                }
-                else if(RoleUtils::inRole('admin')) {
-                    App::getRouter()->redirectTo('homeAdmin');
-                }
+                App::getRouter()->redirectTo('home');
+
 
             } else {
                 Utils::addErrorMessage('Niepoprawna nazwa użytkownika lub hasło.');
@@ -99,16 +91,9 @@ class LoginCtrl {
 
     }
 
-//    public function isLogIn() {
-//        if(RoleUtils::inRole('user')) {
-//            Utils::addInfoMessage("Jesteś już zalogowany.");
-//        }
-//    }
-
 
     public function generateView() {
-//        App::getSmarty()->assign('form', $this->form);
-//        $this->isLogIn();
+
         App::getSmarty()->assign('username', SessionUtils::load('username', true));
         App::getSmarty()->display('Login.tpl');
     }

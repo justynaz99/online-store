@@ -7,7 +7,7 @@
 {/block}
 
 {block name="menuHome"}
-    <li><a href="{$conf->action_root}homeUser">Strona główna</a></li>
+    <li><a href="{$conf->action_root}home">Strona główna</a></li>
 {/block}
 
 {block name="menuShoppingCart"}

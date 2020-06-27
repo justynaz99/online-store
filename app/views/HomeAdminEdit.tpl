@@ -7,7 +7,7 @@
 {/block}
 
 {block name="menuHome"}
-    <li><a href="{$conf->action_root}homeSeller">Strona główna</a></li>
+    <li><a href="{$conf->action_root}home">Strona główna</a></li>
 {/block}
 
 {block name="menuLogOut"}

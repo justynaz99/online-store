@@ -7,12 +7,9 @@
 {/block}
 
 {block name="menuHome"}
-    <li><a href="{$conf->action_root}homeSeller">Strona główna</a></li>
+    <li><a href="{$conf->action_root}home">Strona główna</a></li>
 {/block}
 
-{*{block name="menuShoppingCart"}*}
-{*    <li><a href="{$conf->action_root}shoppingCartShow">Koszyk</a></li>*}
-{*{/block}*}
 
 {block name="menuLogOut"}
     <li><a href="{$conf->action_root}logout">Wyloguj</a></li>
@@ -72,7 +69,6 @@
                     <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
                     <p>{$p["price"]} zł</p>
                     <ul class="actions">
-{*                        <li><a href="{$conf->action_root}addItem/{$p["id_product"]}" class="button">Dodaj do koszyka</a></li>*}
                         <li><a href="{$conf->action_root}deleteFromList/{$p["id_product"]}" class="button">Usuń produkt z listy</a></li>
                     </ul>
                 </article>

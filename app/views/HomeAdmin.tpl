@@ -7,7 +7,7 @@
 {/block}
 
 {block name="menuHome"}
-    <li><a href="{$conf->action_root}homeSeller">Strona główna</a></li>
+    <li><a href="{$conf->action_root}home">Strona główna</a></li>
 {/block}
 
 {block name="menuLogOut"}
@@ -60,7 +60,8 @@
                             <td align="center">{$user["last_name"]}</td>
                             <td align="center">{$user["email"]}</td>
                             <td align="center">{$user["role"]}</td>
-                            <td align="center"><a href="{$conf->action_root}deleteUser/{$user["id_user"]}" class="button">Usuń</a></td>
+                            <td align="right"><a href="{$conf->action_root}deleteUser/{$user["id_user"]}" class="button">Usuń</a></td>
+                            <td align="left"><a href="{$conf->action_root}userEdit/{$user["id_user"]}" class="button">Edytuj</a></td>
                         </tr>
                     {/foreach}
                 </table>
