@@ -11,3 +11,7 @@
     </div>
 
 {/block}
+
+{block name="pagination"}
+
+{/block}

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-18 18:26:06
+/* Smarty version 3.1.34-dev-7, created on 2020-06-27 21:12:04
   from 'C:\xampp\htdocs\onlineStore\app\views\ShoppingCart.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5eeb959ec8e8f8_29475559',
+  'unifunc' => 'content_5ef79a0417c498_74320643',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '09f6d5aad8933bdda407ba3467f745580b8fbb22' => 
     array (
       0 => 'C:\\xampp\\htdocs\\onlineStore\\app\\views\\ShoppingCart.tpl',
-      1 => 1592497328,
+      1 => 1593284990,
       2 => 'file',
     ),
   ),
@@ -20,49 +20,49 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eeb959ec8e8f8_29475559 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ef79a0417c498_74320643 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_18765274895eeb959ec63740_20374792', "username");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_16070586065ef79a04151753_99333678', "username");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_15930547495eeb959ec6eb50_46624904', "menuHome");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9331248065ef79a0415f748_98850478', "menuHome");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_19289566145eeb959ec70f79_91076333', "menuShoppingCart");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9036221115ef79a04161358_09605411', "menuShoppingCart");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3138282025eeb959ec72d98_72318991', "menuLogOut");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_904930205ef79a04162ad3_71874967', "menuLogOut");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9137606875eeb959ec74b20_14807942', "menuOrders");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17443039255ef79a041641b8_17248258', "menuOrders");
 ?>
 
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_243116985eeb959ec77451_13720350', "content");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_12981658835ef79a04165ad6_36901037', "content");
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block "username"} */
-class Block_18765274895eeb959ec63740_20374792 extends Smarty_Internal_Block
+class Block_16070586065ef79a04151753_99333678 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'username' => 
   array (
-    0 => 'Block_18765274895eeb959ec63740_20374792',
+    0 => 'Block_16070586065ef79a04151753_99333678',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -77,30 +77,30 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "username"} */
 /* {block "menuHome"} */
-class Block_15930547495eeb959ec6eb50_46624904 extends Smarty_Internal_Block
+class Block_9331248065ef79a0415f748_98850478 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'menuHome' => 
   array (
-    0 => 'Block_15930547495eeb959ec6eb50_46624904',
+    0 => 'Block_9331248065ef79a0415f748_98850478',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
     <li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
-homeUser">Strona główna</a></li>
+home">Strona główna</a></li>
 <?php
 }
 }
 /* {/block "menuHome"} */
 /* {block "menuShoppingCart"} */
-class Block_19289566145eeb959ec70f79_91076333 extends Smarty_Internal_Block
+class Block_9036221115ef79a04161358_09605411 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'menuShoppingCart' => 
   array (
-    0 => 'Block_19289566145eeb959ec70f79_91076333',
+    0 => 'Block_9036221115ef79a04161358_09605411',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -113,12 +113,12 @@ shoppingCartShow">Koszyk</a></li>
 }
 /* {/block "menuShoppingCart"} */
 /* {block "menuLogOut"} */
-class Block_3138282025eeb959ec72d98_72318991 extends Smarty_Internal_Block
+class Block_904930205ef79a04162ad3_71874967 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'menuLogOut' => 
   array (
-    0 => 'Block_3138282025eeb959ec72d98_72318991',
+    0 => 'Block_904930205ef79a04162ad3_71874967',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -131,12 +131,12 @@ logout">Wyloguj</a></li>
 }
 /* {/block "menuLogOut"} */
 /* {block "menuOrders"} */
-class Block_9137606875eeb959ec74b20_14807942 extends Smarty_Internal_Block
+class Block_17443039255ef79a041641b8_17248258 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'menuOrders' => 
   array (
-    0 => 'Block_9137606875eeb959ec74b20_14807942',
+    0 => 'Block_17443039255ef79a041641b8_17248258',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -149,12 +149,12 @@ orderShow">Zamówienia</a></li>
 }
 /* {/block "menuOrders"} */
 /* {block "content"} */
-class Block_243116985eeb959ec77451_13720350 extends Smarty_Internal_Block
+class Block_12981658835ef79a04165ad6_36901037 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_243116985eeb959ec77451_13720350',
+    0 => 'Block_12981658835ef79a04165ad6_36901037',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -171,13 +171,13 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['row']->value) {
 ?>
                     <tr>
-                        <td><?php echo $_smarty_tpl->tpl_vars['row']->value["name"];?>
+                        <td align="center"><?php echo $_smarty_tpl->tpl_vars['row']->value["name"];?>
 </td>
-                        <td align="left"><?php echo $_smarty_tpl->tpl_vars['row']->value["price_product"];?>
+                        <td align="center"><?php echo $_smarty_tpl->tpl_vars['row']->value["price"];?>
 </td>
-                        <td align="right"><?php echo $_smarty_tpl->tpl_vars['row']->value["quantity"];?>
+                        <td align="center"><?php echo $_smarty_tpl->tpl_vars['row']->value["quantity"];?>
 </td>
-                        <td align="right"><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+                        <td align="center"><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
 deleteItem/<?php echo $_smarty_tpl->tpl_vars['row']->value["id_product"];?>
 " class="button">Usuń</a></td>
                     </tr>

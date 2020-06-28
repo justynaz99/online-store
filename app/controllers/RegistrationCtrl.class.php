@@ -28,18 +28,18 @@ class RegistrationCtrl {
             'trim' => true,
             'required' => true,
             'required_message' => 'Wprowadź nazwę użytkownika.',
-            'min_length' => 3,
+            'min_length' => 5,
             'max_length' => 20,
-            'validator_message' => 'Nazwa użytkownika powinna mieć od 3 do 20 znaków.'
+            'validator_message' => 'Nazwa użytkownika powinna zawierać od 5 do 20 znaków.'
         ]);
 
         $this->form->password = $v->validateFromPost('password', [
             'trim' => true,
             'required' => true,
             'required_message' => 'Wprowadź hasło.',
-            'min_length' => 3,
+            'min_length' => 5,
             'max_length' => 20,
-            'validator_message' => 'Hasło powinno mieć od 3 do 30 znaków.'
+            'validator_message' => 'Hasło powinno zawierać od 5 do 30 znaków.'
         ]);
 
         $this->form->first_name = $v->validateFromPost('first_name', [
@@ -48,7 +48,7 @@ class RegistrationCtrl {
             'required_message' => 'Wprowadź imię.',
             'min_length' => 3,
             'max_length' => 20,
-            'validator_message' => 'Hasło powinno mieć od 3 do 30 znaków.'
+            'validator_message' => 'Hasło powinno zawierać od 3 do 30 znaków.'
         ]);
 
         $this->form->last_name = $v->validateFromPost('last_name', [
@@ -57,16 +57,17 @@ class RegistrationCtrl {
             'required_message' => 'Wprowadź nazwisko.',
             'min_length' => 2,
             'max_length' => 20,
-            'validator_message' => 'Nazwisko powinno mieć od 3 do 30 znaków.'
+            'validator_message' => 'Nazwisko powinno zawierać od 3 do 30 znaków.'
         ]);
 
         $this->form->email = $v->validateFromPost('email', [
             'trim' => true,
             'required' => true,
+            'email' => true,
             'required_message' => 'Wprowadź adres email.',
             'min_length' => 3,
-            'max_length' => 20,
-            'validator_message' => 'Adres email powinien mieć od 3 do 30 znaków.'
+            'max_length' => 40,
+            'validator_message' => 'Wprowadź poprawny adres email.'
         ]);
 
         return !App::getMessages()->isError();
@@ -88,9 +89,13 @@ class RegistrationCtrl {
                     "email" => $this->form->email,
                     "role" => "user",
                     "date_added" => date("Y-m-d"),
-                    "who_added" => $this->form->id
                 ]);
-                App::getRouter()->redirectTo('login');
+
+                $id = App::getDB()->id();
+
+                App::getDB()->update("user", ["who_added" => $id], ["id_user" => $id]);
+
+                App::getRouter()->redirectTo('loginShow');
                 Utils::addInfoMessage("Zarejestrowano użytkownika: " . $this->form->username);
             } catch (\PDOException $e) {
                 Utils::addErrorMessage('Błąd podczas wprowadzania rekrodu do bazy.');

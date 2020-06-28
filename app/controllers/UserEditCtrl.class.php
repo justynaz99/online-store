@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use core\App;
+use core\SessionUtils;
 use core\Utils;
 use core\ParamUtils;
 use core\Validator;
@@ -62,7 +63,7 @@ class UserEditCtrl {
             'required_message' => 'Wprowadź nazwę użytkownika.',
             'min_length' => 3,
             'max_length' => 20,
-            'validator_message' => 'Nazwa użytkownika powinna mieć od 3 do 20 znaków.'
+            'validator_message' => 'Nazwa użytkownika powinna zawierać od 5 do 20 znaków.'
         ]);
 
         $this->form->password = $v->validateFromPost('password', [
@@ -71,7 +72,7 @@ class UserEditCtrl {
             'required_message' => 'Wprowadź hasło.',
             'min_length' => 3,
             'max_length' => 20,
-            'validator_message' => 'Hasło powinno mieć od 3 do 30 znaków.'
+            'validator_message' => 'Hasło powinno zawierać od 5 do 30 znaków.'
         ]);
 
         $this->form->first_name = $v->validateFromPost('first_name', [
@@ -80,7 +81,7 @@ class UserEditCtrl {
             'required_message' => 'Wprowadź imię.',
             'min_length' => 3,
             'max_length' => 20,
-            'validator_message' => 'Hasło powinno mieć od 3 do 30 znaków.'
+            'validator_message' => 'Hasło powinno zawierać od 3 do 30 znaków.'
         ]);
 
         $this->form->last_name = $v->validateFromPost('last_name', [
@@ -89,16 +90,17 @@ class UserEditCtrl {
             'required_message' => 'Wprowadź nazwisko.',
             'min_length' => 2,
             'max_length' => 20,
-            'validator_message' => 'Nazwisko powinno mieć od 3 do 30 znaków.'
+            'validator_message' => 'Nazwisko powinno zawierać od 3 do 30 znaków.'
         ]);
 
         $this->form->email = $v->validateFromPost('email', [
             'trim' => true,
             'required' => true,
+            'email' => true,
             'required_message' => 'Wprowadź adres email.',
             'min_length' => 3,
             'max_length' => 20,
-            'validator_message' => 'Adres email powinien mieć od 3 do 30 znaków.'
+            'validator_message' => 'Wprowadź poprawny adres email.'
         ]);
 
         $this->form->role = $v->validateFromPost('role', [
@@ -107,13 +109,15 @@ class UserEditCtrl {
             'required_message' => 'Wprowadź rolę.',
             'min_length' => 3,
             'max_length' => 20,
-            'validator_message' => 'Rola powinna mieć od 3 do 30 znaków.'
+            'validator_message' => 'Rola powinna zawierać od 5 do 30 znaków.'
         ]);
 
         return !App::getMessages()->isError();
     }
 
     public function action_userEditSave() {
+
+
 
         if($this->validateSave()) {
             try {
@@ -124,8 +128,8 @@ class UserEditCtrl {
                     "last_name" => $this->form->last_name,
                     "email" => $this->form->email,
                     "role" => $this->form->role,
-                    "date_added" => date("Y-m-d"),
-                    "who_added" => $this->form->id_user
+                    "date_modification" => date("Y-m-d"),
+                    "who_modificated" => SessionUtils::load("id_user", true)
                 ], [
                     "id_user" => $this->form->id_user
                 ]);
@@ -141,9 +145,23 @@ class UserEditCtrl {
             $this->generateView();
         }
 
+    }
 
+    public function action_deleteUser()
+    {
+        $id_user = ParamUtils::getFromCleanURL(1, true, 'Błędne wywołanie aplikacji');
 
+        $user = App::getDB()->select("user", [
+            "id_user",
+        ], [
+            "id_user" => $id_user
+        ]);
 
+        if ($user) {
+            App::getDB()->delete("user", ["id_user" => $id_user]);
+        }
+        Utils::addInfoMessage("Usunięto użytkownika.");
+        App::getRouter()->redirectTo('homeAdmin');
     }
 
 

@@ -7,7 +7,6 @@ use core\RoleUtils;
 
 App::getRouter()->setDefaultRoute('home');
 
-
 App::getRouter()->setLoginRoute('login'); #action to forward if no permissions
 
 Utils::addRoute('login', 'LoginCtrl');
@@ -18,10 +17,7 @@ Utils::addRoute('registrationShow', 'RegistrationCtrl');
 Utils::addRoute('registration', 'RegistrationCtrl');
 
 Utils::addRoute('home', 'HomeCtrl');
-Utils::addRoute('deleteFromList', 'HomeCtrl');
-Utils::addRoute('addToList', 'HomeCtrl');
 Utils::addRoute('searchShow', 'HomeCtrl');
-Utils::addRoute('deleteUser', 'HomeCtrl');
 
 Utils::addRoute('shoppingCartShow', 'ShoppingCartCtrl');
 Utils::addRoute('addItem', 'ShoppingCartCtrl');
@@ -32,3 +28,7 @@ Utils::addRoute('order', 'OrderCtrl');
 
 Utils::addRoute('userEdit', 'UserEditCtrl');
 Utils::addRoute('userEditSave', 'UserEditCtrl');
+Utils::addRoute('deleteUser', 'UserEditCtrl');
+
+Utils::addRoute('deleteFromList', 'ProductEditCtrl');
+Utils::addRoute('addToList', 'ProductEditCtrl');

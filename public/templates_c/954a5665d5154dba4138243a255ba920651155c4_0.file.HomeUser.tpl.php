@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-26 12:44:51
+/* Smarty version 3.1.34-dev-7, created on 2020-06-28 22:38:00
   from 'C:\xampp\htdocs\onlineStore\app\views\HomeUser.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ef5d1a307c013_82675464',
+  'unifunc' => 'content_5ef8ffa86a2337_36893010',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '954a5665d5154dba4138243a255ba920651155c4' => 
     array (
       0 => 'C:\\xampp\\htdocs\\onlineStore\\app\\views\\HomeUser.tpl',
-      1 => 1593168019,
+      1 => 1593376128,
       2 => 'file',
     ),
   ),
@@ -20,53 +20,53 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ef5d1a307c013_82675464 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ef8ffa86a2337_36893010 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_5374340625ef5d1a306c2e4_02658453', "username");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_13387759175ef8ffa8680048_76772664', "username");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_16201208525ef5d1a30706a9_77234503', "menuHome");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_18084208505ef8ffa86884d8_35237706', "menuHome");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3036684135ef5d1a3071366_19188386', "menuShoppingCart");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6870515525ef8ffa8689b54_13344003', "menuShoppingCart");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_19502824055ef5d1a3071e19_73132144', "menuLogOut");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4000432395ef8ffa868ae07_36124604', "menuLogOut");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4693953095ef5d1a3072899_07844510', "menuOrders");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9240024985ef8ffa868c059_82565054', "menuOrders");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7436429055ef5d1a30732f4_79229092', "header");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1972715075ef8ffa868d2a5_20166363', "header");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17530352335ef5d1a3073940_63451983', "content");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_18569760145ef8ffa868dd91_27402373', "content");
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block "username"} */
-class Block_5374340625ef5d1a306c2e4_02658453 extends Smarty_Internal_Block
+class Block_13387759175ef8ffa8680048_76772664 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'username' => 
   array (
-    0 => 'Block_5374340625ef5d1a306c2e4_02658453',
+    0 => 'Block_13387759175ef8ffa8680048_76772664',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -81,12 +81,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "username"} */
 /* {block "menuHome"} */
-class Block_16201208525ef5d1a30706a9_77234503 extends Smarty_Internal_Block
+class Block_18084208505ef8ffa86884d8_35237706 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'menuHome' => 
   array (
-    0 => 'Block_16201208525ef5d1a30706a9_77234503',
+    0 => 'Block_18084208505ef8ffa86884d8_35237706',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -99,12 +99,12 @@ home">Strona główna</a></li>
 }
 /* {/block "menuHome"} */
 /* {block "menuShoppingCart"} */
-class Block_3036684135ef5d1a3071366_19188386 extends Smarty_Internal_Block
+class Block_6870515525ef8ffa8689b54_13344003 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'menuShoppingCart' => 
   array (
-    0 => 'Block_3036684135ef5d1a3071366_19188386',
+    0 => 'Block_6870515525ef8ffa8689b54_13344003',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -117,12 +117,12 @@ shoppingCartShow">Koszyk</a></li>
 }
 /* {/block "menuShoppingCart"} */
 /* {block "menuLogOut"} */
-class Block_19502824055ef5d1a3071e19_73132144 extends Smarty_Internal_Block
+class Block_4000432395ef8ffa868ae07_36124604 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'menuLogOut' => 
   array (
-    0 => 'Block_19502824055ef5d1a3071e19_73132144',
+    0 => 'Block_4000432395ef8ffa868ae07_36124604',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -135,12 +135,12 @@ logout">Wyloguj</a></li>
 }
 /* {/block "menuLogOut"} */
 /* {block "menuOrders"} */
-class Block_4693953095ef5d1a3072899_07844510 extends Smarty_Internal_Block
+class Block_9240024985ef8ffa868c059_82565054 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'menuOrders' => 
   array (
-    0 => 'Block_4693953095ef5d1a3072899_07844510',
+    0 => 'Block_9240024985ef8ffa868c059_82565054',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -153,12 +153,12 @@ orderShow">Zamówienia</a></li>
 }
 /* {/block "menuOrders"} */
 /* {block "header"} */
-class Block_7436429055ef5d1a30732f4_79229092 extends Smarty_Internal_Block
+class Block_1972715075ef8ffa868d2a5_20166363 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'header' => 
   array (
-    0 => 'Block_7436429055ef5d1a30732f4_79229092',
+    0 => 'Block_1972715075ef8ffa868d2a5_20166363',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -181,7 +181,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "header"} */
 /* {block 'backToList'} */
-class Block_14271279615ef5d1a307b849_57550338 extends Smarty_Internal_Block
+class Block_2674722225ef8ffa86a1714_11347279 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -192,16 +192,16 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'backToList'} */
 /* {block "content"} */
-class Block_17530352335ef5d1a3073940_63451983 extends Smarty_Internal_Block
+class Block_18569760145ef8ffa868dd91_27402373 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_17530352335ef5d1a3073940_63451983',
+    0 => 'Block_18569760145ef8ffa868dd91_27402373',
   ),
   'backToList' => 
   array (
-    0 => 'Block_14271279615ef5d1a307b849_57550338',
+    0 => 'Block_2674722225ef8ffa86a1714_11347279',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -217,9 +217,6 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                 <p>Aenean ornare velit lacus</p>
             </header>
             <p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.</p>
-            <ul class="actions">
-                <li><a href="#" class="button big">Learn More</a></li>
-            </ul>
         </div>
         <span class="image object">
 		    <img src="images/pic10.jpg" alt="" />
@@ -230,7 +227,6 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
         <header class="major">
             <h2>Lista produktów</h2>
         </header>
-        <h3>Wyszukaj</h3>
         <div class="row gtr-200">
             <form action="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
 searchShow" method="post" style="width: 400px">
@@ -238,6 +234,18 @@ searchShow" method="post" style="width: 400px">
                     <input type="text" name="name" id="name" value="<?php echo $_smarty_tpl->tpl_vars['productForm']->value->name;?>
 " placeholder="Nazwa produktu" /><br>
                     <input type="submit" value="Szukaj" class="primary" />
+                </div>
+            </form>
+
+            <form action="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+home" method="post" style="width: 400px">
+                <div class="col-6 col-12-xsmall">
+                    <select name="option" id="option">
+                        <option value="">- Filtruj -</option>
+                        <option value="1">Po cenie</option>
+                        <option value="2">Alfabetycznie</option>
+                    </select><br>
+                    <input type="submit" value="Filtruj" class="primary"/><br>
                 </div>
             </form>
         </div>
@@ -268,8 +276,35 @@ addItem/<?php echo $_smarty_tpl->tpl_vars['p']->value["id_product"];?>
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </div>
 
+        <br>
+        <ul class="pagination">
+            <?php ob_start();
+echo $_smarty_tpl->tpl_vars['page']->value;
+$_prefixVariable1 = ob_get_clean();
+if ($_prefixVariable1 == 1) {?>
+                <li><span class="button disabled">Previous page</span></li>
+            <?php } else { ?>
+                <li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+home/<?php echo $_smarty_tpl->tpl_vars['page']->value-1;?>
+" class="button">Previous page</a></li>
+            <?php }?>
+            <?php ob_start();
+echo $_smarty_tpl->tpl_vars['page']->value;
+$_prefixVariable2 = ob_get_clean();
+ob_start();
+echo $_smarty_tpl->tpl_vars['lastPage']->value;
+$_prefixVariable3 = ob_get_clean();
+if ($_prefixVariable2 == $_prefixVariable3) {?>
+                <li><span class="button disabled">Previous page</span></li>
+            <?php } else { ?>
+                <li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+home/<?php echo $_smarty_tpl->tpl_vars['page']->value+1;?>
+" class="button">Next page</a></li>
+            <?php }?>
+        </ul>
+
         <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14271279615ef5d1a307b849_57550338', 'backToList', $this->tplIndex);
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2674722225ef8ffa86a1714_11347279', 'backToList', $this->tplIndex);
 ?>
 
     </section>

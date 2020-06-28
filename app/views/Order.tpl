@@ -24,30 +24,78 @@
 
 
 {block name="content"}
-
     <div style="margin-top: 20px">
-        <h4>Twoje zamówienia:</h4>
+        <h4>Twoje zamówienia:</h4><br>
         <div class="table-wrapper" style="width: 600px">
             {foreach $orders as $order}
                 <table>
-                    <tr>
-                        <td><h7>{$order["id_order"]}</h7></td>
-                        <td align="left"><h7>{$order["value"]}</h7></td>
-                        <td align="right"><h7>{$order["date"]}</h7></td>
+                    <tr style="border-color: #f56a6a; border-width: 2px">
+                        <td align="center">
+                            <h7></h7>
+                        </td>
+                        <td align="center">
+                            <h7>ZAMÓWIENIE nr {$order["id_order"]}</h7>
+                        </td>
+                        <td align="center">
+                            <h7></h7>
+                        </td>
                     </tr>
-                    {foreach $list as $row}
-                        <tr>
-                            <td>{$row["name"]}</td>
-                            <td align="left">{$row["price_product"]}</td>
-                            <td align="right">{$row["quantity"]}</td>
-                        </tr>
+                    <tr>
+                        <td align="center">
+                            <h7>wartość</h7>
+                        </td>
+                        <td align="center">
+                            <h7>data</h7>
+                        </td>
+                        <td align="center">
+                            <h7>status</h7>
+                        </td>
+                    </tr>
+                    <tr>
+                    <tr>
+                        <td align="center">{$order["value"]}</td>
+                        <td align="center">{$order["date"]}</td>
+                        <td align="center">{$order["name"]}</td>
+                    </tr>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <h7></h7>
+                        </td>
+                        <td align="center">
+                            <h7>POZYCJE</h7>
+                        </td>
+                        <td align="center">
+                            <h7></h7>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <h7>nazwa</h7>
+                        </td>
+                        <td align="center">
+                            <h7>cena</h7>
+                        </td>
+                        <td align="center">
+                            <h7>ilość</h7>
+                        </td>
+                    </tr>
+                    <tr>
+                        {foreach $list as $row}
+                        {if $row["id_order"] == $order["id_order"]}
+                    <tr>
+                        <td align="center">{$row["name"]}</td>
+                        <td align="center">{$row["price_product"]}</td>
+                        <td align="center">{$row["quantity"]}</td>
+                    </tr>
+                    {/if}
+                    </tr>
                     {/foreach}
                 </table>
+                <br>
             {/foreach}
 
 
         </div>
     </div>
-
-
 {/block}

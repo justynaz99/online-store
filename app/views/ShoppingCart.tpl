@@ -31,10 +31,10 @@
             <table>
                 {foreach $list as $row}
                     <tr>
-                        <td>{$row["name"]}</td>
-                        <td align="left">{$row["price_product"]}</td>
-                        <td align="right">{$row["quantity"]}</td>
-                        <td align="right"><a href="{$conf->action_root}deleteItem/{$row["id_product"]}" class="button">Usuń</a></td>
+                        <td align="center">{$row["name"]}</td>
+                        <td align="center">{$row["price"]}</td>
+                        <td align="center">{$row["quantity"]}</td>
+                        <td align="center"><a href="{$conf->action_root}deleteItem/{$row["id_product"]}" class="button">Usuń</a></td>
                     </tr>
                 {/foreach}
             </table>

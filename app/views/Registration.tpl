@@ -17,7 +17,7 @@
 {block name="content"}
 
     <div class="row gtr-200">
-        <form action="{$conf->action_root}registration" style="width: 400px; margin-top: 3%" method="post">
+        <form action="{$conf->action_root}registration" style="width: 400px; margin-top: 1%" method="post">
             <h3>Zarejestruj się</h3>
             <div class="col-6 col-12-xsmall">
                 <input type="text" name="username" id="username" value="{$form->username}" placeholder="Nazwa użytkownika" /><br>

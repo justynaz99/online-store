@@ -34,18 +34,13 @@ class ShoppingCartCtrl {
 
             $records = App::getDB()->select("product", [
                 "id_product",
-                "name",
-                "price",
             ], [
                 "id_product" => $id_product
             ]);
 
-
-
             if(!$productFromCart) {
                 App::getDB()->insert("shopping_cart", [
                     "id_product" => $records[0]["id_product"],
-                    "price_product" => $records[0]["price"],
                     "id_user" => $id_user,
                     "quantity" => 1
                 ]);
@@ -67,12 +62,8 @@ class ShoppingCartCtrl {
                 Utils::addErrorMessage($e->getMessage());
         }
 
-        if(RoleUtils::inRole('user')) {
-            App::getRouter()->redirectTo('homeUser');
-        }
-        else if(RoleUtils::inRole('seller')) {
-            App::getRouter()->redirectTo('homeSeller');
-        }
+
+        App::getRouter()->redirectTo('shoppingCartShow');
 
     }
 
@@ -113,13 +104,18 @@ class ShoppingCartCtrl {
 
             "shopping_cart.id_product",
             "product.name",
-            "shopping_cart.price_product",
+            "product.price",
             "shopping_cart.quantity"
         ], [
             "id_user" => $id_user,
         ]);
 
-        $this->value = App::getDB()->sum("shopping_cart","price_product");
+        $this->value = App::getDB()->sum("shopping_cart", [
+            "[>]product" => "id_product"
+        ], [
+            "product.price"
+        ]);
+
 
         $this->generateView();
     }

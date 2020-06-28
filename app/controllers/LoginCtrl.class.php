@@ -51,6 +51,7 @@ class LoginCtrl {
                     "username" => $this->form->username,
                     "password" => $this->form->password
                 ]);
+
                 if($role[0]['role'] == "user") {
                     RoleUtils::addRole('user');
                 }
